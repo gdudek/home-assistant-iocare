@@ -319,7 +319,9 @@ class ParticulateMatter10(CoordinatorEntity, SensorEntity):
     @property
     def native_value(self) -> int:
         """Return current PM10 measurement."""
-
+        if (self.purifier_data.particulate_matter_10 == 0) {
+            raise(ValueError)
+            }
         return self.purifier_data.particulate_matter_10
 
     @property
